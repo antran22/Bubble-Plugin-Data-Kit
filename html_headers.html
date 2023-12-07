@@ -1,0 +1,63 @@
+<script>
+    const optionSetRegex = /^option\./g;
+    const databaseTypeRegex = /^(custom\.|user)/g;
+    window.RouterUtils = {
+        optionSets: Lib().app().json.child("option_sets").cache,
+        dbInstance: Lib().db_instance(),
+
+        lookupOptionSet(typeId) {
+            return this.optionSets[typeId];
+        },
+
+        lookupValueID(typeName, fieldName, value) {
+            if (fieldName === "_id" || fieldName === "display" || !fieldName) {
+                /* The value here is already the ID */
+                return value;
+            }
+            if (typeName.match(optionSetRegex)) {
+                const optionSetId = typeName.replace(optionSetRegex, "");
+                return this.lookupOptionId(optionSetId, fieldName, value);
+            } else if (typeName.match(databaseTypeRegex)) {
+                if (!value) {
+                    return null;
+                }
+                return this.lookupDatabaseEntryId(typeName, fieldName, value);
+            }
+        },
+
+        lookupDatabaseEntryId(typeName, fieldName, lookupValue) {
+            try {
+                const thing = this.dbInstance.retrieve(typeName, {[fieldName]: lookupValue});
+                if (!thing) {
+                    return lookupValue;
+                }
+                return thing.id || lookupValue;
+            } catch (err) {
+				if (err.not_ready_key) {
+                    throw err;
+                } else {
+                    console.log("Error when fetching", err);
+                    return null;
+                }
+            }
+        },
+
+        lookupOptionId(optionSetId, fieldName, lookupValue) {
+            const optionSet = this.lookupOptionSet(optionSetId);
+            if (!optionSet || !optionSet.values) {
+                return lookupValue;
+            }
+            const options = optionSet.values;
+
+            const actualFieldName = (fieldName === "display" || !fieldName) ? "%d" : fieldName;
+            for (const key in options) {
+                const option = options[key];
+                const fieldValue = option[actualFieldName];
+                if (`${fieldValue || ""}` === `${lookupValue || ""}`) {
+                    return option["%d"];
+                }
+            }
+            return lookupValue;
+        }
+    }
+</script>

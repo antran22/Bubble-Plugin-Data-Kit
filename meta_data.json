@@ -1,0 +1,10 @@
+{
+    "categories": {
+        "0": "technical",
+        "1": "productivity"
+    },
+    "description": "Some utilities functions for handling Single Page App.",
+    "image": "//meta-l.cdn.bubble.io/f1687545937816x190724263356531140/Untitled.png",
+    "license": "open_source",
+    "name": "Router"
+}

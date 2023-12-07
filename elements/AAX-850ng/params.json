@@ -1,0 +1,221 @@
+{
+    "add_is_visible": true,
+    "category": "input forms",
+    "default_dim": {
+        "height": 0,
+        "width": 0
+    },
+    "display": "Route Matcher",
+    "events": {
+        "AAs": {
+            "caption": "initialized",
+            "name": "initialized"
+        }
+    },
+    "fields": {
+        "AAY": {
+            "caption": "Path Segments",
+            "doc": "Always pass in \"Path segments as text list\"",
+            "editor": "DynamicValue",
+            "is_list": true,
+            "name": "segments",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAZ": {
+            "caption": "Support decoding up to 6 levels of route segments",
+            "editor": "Label",
+            "name": "info",
+            "rank": 0
+        },
+        "AAa": {
+            "caption": "Segment 1 Type",
+            "editor": "custom_type",
+            "name": "type1",
+            "optional": true,
+            "rank": 3
+        },
+        "AAb": {
+            "caption": "Segment 1 Field",
+            "editor": "custom_field_AAa",
+            "field_type_restriction": "text_image_file",
+            "name": "field1",
+            "optional": true,
+            "rank": 4
+        },
+        "AAc": {
+            "caption": "Segment 2 Type",
+            "editor": "custom_type",
+            "name": "type2",
+            "optional": true,
+            "rank": 6
+        },
+        "AAd": {
+            "caption": "Segment 2 Field",
+            "editor": "custom_field_AAc",
+            "field_type_restriction": "text_image_file",
+            "name": "field2",
+            "optional": true,
+            "rank": 7
+        },
+        "AAe": {
+            "caption": "Segment 3 Type",
+            "editor": "custom_type",
+            "name": "type3",
+            "optional": true,
+            "rank": 9
+        },
+        "AAf": {
+            "caption": "Segment 3 Field",
+            "editor": "custom_field_AAe",
+            "field_type_restriction": "text_image_file",
+            "name": "field3",
+            "optional": true,
+            "rank": 10
+        },
+        "AAg": {
+            "caption": "Segment 4 Type",
+            "editor": "custom_type",
+            "name": "type4",
+            "optional": true,
+            "rank": 12
+        },
+        "AAh": {
+            "caption": "Segment 4 Field",
+            "editor": "custom_field_AAg",
+            "field_type_restriction": "text_image_file",
+            "name": "field4",
+            "optional": true,
+            "rank": 13
+        },
+        "AAi": {
+            "caption": "Segment 5 Type",
+            "editor": "custom_type",
+            "name": "type5",
+            "optional": true,
+            "rank": 15
+        },
+        "AAj": {
+            "caption": "Segment 5 Field",
+            "editor": "custom_field_AAi",
+            "field_type_restriction": "text_image_file",
+            "name": "field5",
+            "optional": true,
+            "rank": 16
+        },
+        "AAk": {
+            "caption": "Segment 6 Type",
+            "editor": "custom_type",
+            "name": "type6",
+            "optional": true,
+            "rank": 18
+        },
+        "AAl": {
+            "caption": "Segment 6 Type",
+            "editor": "custom_field_AAk",
+            "field_type_restriction": "text_image_file",
+            "name": "field6",
+            "optional": true,
+            "rank": 19
+        },
+        "AAu": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟏",
+            "editor": "Label",
+            "name": "s1_info",
+            "rank": 2
+        },
+        "AAv": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟐",
+            "editor": "Label",
+            "name": "s2_info",
+            "rank": 5
+        },
+        "AAw": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟑",
+            "editor": "Label",
+            "name": "s3_info",
+            "rank": 8
+        },
+        "AAx": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟒",
+            "editor": "Label",
+            "name": "s4_info",
+            "rank": 11
+        },
+        "AAy": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟓",
+            "editor": "Label",
+            "name": "s5_info",
+            "rank": 14
+        },
+        "AAz": {
+            "caption": "𝐒𝐄𝐆𝐌𝐄𝐍𝐓 𝟔",
+            "editor": "Label",
+            "name": "s6_info",
+            "rank": 17
+        }
+    },
+    "icon": "ion-code",
+    "property_applications": {
+        "MinWidth": true,
+        "resizable": true
+    },
+    "states": {
+        "AAm": {
+            "caption": "value1",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value1",
+            "value": "custom_data_AAa"
+        },
+        "AAn": {
+            "caption": "value2",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value2",
+            "value": "custom_data_AAc"
+        },
+        "AAo": {
+            "caption": "value3",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value3",
+            "value": "custom_data_AAe"
+        },
+        "AAp": {
+            "caption": "value4",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value4",
+            "value": "custom_data_AAg"
+        },
+        "AAq": {
+            "caption": "value5",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value5",
+            "value": "custom_data_AAi"
+        },
+        "AAr": {
+            "caption": "value6",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "value6",
+            "value": "custom_data_AAk"
+        },
+        "AAt": {
+            "caption": "initialized",
+            "initialization_code": {
+                "fn": "function(properties, context) {\n\n\n\n}"
+            },
+            "name": "initialized",
+            "value": "boolean"
+        }
+    }
+}
